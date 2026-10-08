@@ -1,7 +1,4 @@
 ---
-import "@fontsource/vazirmatn/arabic-400.css";
-import "@fontsource/vazirmatn/arabic-800.css";
-
 const title = "دیزاین | طراحی و توسعه وبسایت، اپلیکیشن و هویت بصری";
 const description =
   "استودیو دیزاین. منتظر سایت جدید ما باشید. برای مشاوره طراحی و توسعه وبسایت و اپلیکیشن، برندینگ و هویت بصری، و دیدن نمونه‌کارها در واتساپ پیام بفرستید.";
@@ -18,7 +15,7 @@ const jsonLd = {
       name: "دیزاین",
       alternateName: ["Dizayn", "dizayn.ir"],
       url: canonical,
-      logo: "https://dizayn.ir/logo.svg",
+      logo: "https://dizayn.ir/images/logo.svg",
       telephone: phone,
       areaServed: "IR",
       knowsLanguage: ["fa", "en"],
@@ -48,7 +45,7 @@ const jsonLd = {
       inLanguage: "fa-IR",
       isPartOf: { "@id": "https://dizayn.ir/#website" },
       about: { "@id": "https://dizayn.ir/#organization" },
-      primaryImageOfPage: "https://dizayn.ir/og.png",
+      primaryImageOfPage: "https://dizayn.ir/images/og.png",
     },
   ],
 };
@@ -67,8 +64,10 @@ const jsonLd = {
     <meta name="theme-color" content="#ebebeb" />
     <meta name="color-scheme" content="light" />
     <meta name="format-detection" content="telephone=no" />
-    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
-    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="preload" href="/fonts/AbarLow-ExtraBold.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="/fonts/AbarLow-Regular.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="icon" href="/icons/favicon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="/icons/apple-touch-icon.png" />
     <link rel="manifest" href="/site.webmanifest" />
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="fa_IR" />
@@ -76,14 +75,14 @@ const jsonLd = {
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:url" content={canonical} />
-    <meta property="og:image" content="https://dizayn.ir/og.png" />
+    <meta property="og:image" content="https://dizayn.ir/images/og.png" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
     <meta property="og:image:alt" content="لوگوی دیزاین روی پس‌زمینه روشن" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
-    <meta name="twitter:image" content="https://dizayn.ir/og.png" />
+    <meta name="twitter:image" content="https://dizayn.ir/images/og.png" />
     <link rel="alternate" hreflang="fa-IR" href={canonical} />
     <link rel="alternate" hreflang="x-default" href={canonical} />
     <link rel="author" href="/llms.txt" />
@@ -96,12 +95,28 @@ const jsonLd = {
 
 <style is:global>
   @font-face {
-    font-family: "Vazirmatn Fallback";
-    src: local("Tahoma");
-    size-adjust: 108%;
-    ascent-override: 95%;
-    descent-override: 25%;
-    line-gap-override: 0%;
+    font-family: "Abar Low";
+    src: url("/fonts/AbarLow-Regular.woff2") format("woff2");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: "Abar Low";
+    src: url("/fonts/AbarLow-ExtraBold.woff2") format("woff2");
+    font-weight: 800;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: "Abar Low";
+    src: url("/fonts/AbarLowFaNum-Bold.woff2") format("woff2");
+    font-weight: 800;
+    font-style: normal;
+    font-display: swap;
+    unicode-range: U+06F0-06F9, U+0030-0039;
   }
 
   :root {
@@ -109,7 +124,7 @@ const jsonLd = {
     --ink: #0e0e0e;
     --accent: #f04a3f;
     --line: rgb(0 0 0 / 0.1);
-    --font: "Vazirmatn", "Vazirmatn Fallback", Tahoma, sans-serif;
+    --font: "Abar Low", Tahoma, sans-serif;
   }
 
   *,
