@@ -1,0 +1,127 @@
+---
+import Layout from "../layouts/Layout.astro";
+
+const whatsapp = "https://wa.me/989120295053";
+---
+
+<Layout>
+  <main>
+    <img class="logo" src="/logo.svg" width="242" height="60" alt="دیزاین" />
+    <div class="copy">
+      <hr />
+      <h1>منتظر سایت جدید ما باشید...</h1>
+      <hr />
+      <p>
+        جهت مشاوره طراحی و توسعه وبسایت و اپلیکیشن یا برندینگ و هویت بصری
+        می‌توانید با ما در ارتباط باشید. جهت دیدن نمونه‌کارها پیام بفرستید...
+      </p>
+    </div>
+    <a class="cta" href={whatsapp} target="_blank" rel="noopener noreferrer">
+      <span class="cta-contact" dir="ltr">
+        <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true">
+          <path
+            fill="#0e0e0e"
+            d="M20.5 3.5A11 11 0 0 0 2.1 17.2L1 23l6-1.6A11 11 0 0 0 20.5 3.5Zm-8.5 17a9.1 9.1 0 0 1-4.6-1.3l-.3-.2-3.6.9.9-3.5-.2-.3A9.1 9.1 0 1 1 12 20.5Zm5-6.8c-.3-.1-1.6-.8-1.8-.9s-.4-.1-.6.1-.7.9-.8 1-.3.2-.6.1a7.4 7.4 0 0 1-2.2-1.4 8.2 8.2 0 0 1-1.5-1.9c-.2-.3 0-.4.1-.6l.4-.5.2-.3a.5.5 0 0 0 0-.5c0-.1-.6-1.4-.8-1.9s-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4 15 15 0 0 0 1.5.6 3.6 3.6 0 0 0 1.7.1 2.7 2.7 0 0 0 1.8-1.3 2.2 2.2 0 0 0 .2-1.3c-.1-.1-.3-.2-.6-.3Z"
+          ></path>
+        </svg>
+        <span class="phone">۰۹۱۲۰۲۹۵۰۵۳</span>
+      </span>
+      <span class="divider" aria-hidden="true"></span>
+      <span class="label">مشاوره<br />رایـــگان</span>
+    </a>
+  </main>
+</Layout>
+
+<style>
+  main {
+    min-height: 100dvh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: clamp(2rem, 5vh, 3.25rem);
+    padding: 2.5rem 1.25rem 3rem;
+  }
+
+  .logo {
+    width: min(242px, 70vw);
+    height: auto;
+  }
+
+  .copy {
+    width: min(765px, 100%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: clamp(1.5rem, 4vh, 3.25rem);
+    text-align: center;
+  }
+
+  hr {
+    width: min(754px, 98%);
+    border: 0;
+    border-top: 1px solid var(--line);
+    margin: 0;
+  }
+
+  h1 {
+    margin: 0;
+    font-size: clamp(1.75rem, 4.25vw, 3.82rem);
+    font-weight: 800;
+    line-height: 1.4;
+    letter-spacing: 0;
+  }
+
+  p {
+    margin: 0;
+    max-width: 46rem;
+    font-size: clamp(1rem, 1.7vw, 1.5rem);
+    font-weight: 400;
+    line-height: 1.7;
+    opacity: 0.8;
+  }
+
+  .cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.85rem;
+    min-height: 56px;
+    padding: 0.55rem 0.85rem 0.55rem 1rem;
+    background: #fff;
+    border-radius: 12px;
+    text-decoration: none;
+    box-shadow: 0 0 0 1px transparent;
+  }
+
+  .cta:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 3px;
+  }
+
+  .cta-contact {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+  }
+
+  .phone {
+    font-size: 1.0625rem;
+    font-weight: 800;
+    line-height: 1;
+    font-variant-numeric: tabular-nums;
+  }
+
+  .divider {
+    width: 1px;
+    height: 28px;
+    background: #d5d5d5;
+  }
+
+  .label {
+    color: var(--accent);
+    font-size: 0.72rem;
+    font-weight: 800;
+    line-height: 1.4;
+    text-align: center;
+  }
+</style>

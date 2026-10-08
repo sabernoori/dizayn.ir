@@ -1,0 +1,16 @@
+{
+  "name": "dizayn-ir",
+  "type": "module",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview"
+  },
+  "dependencies": {
+    "@astrojs/sitemap": "^3.6.0",
+    "@fontsource/vazirmatn": "^5.2.8",
+    "astro": "^5.14.4"
+  }
+}

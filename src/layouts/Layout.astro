@@ -1,0 +1,142 @@
+---
+import "@fontsource/vazirmatn/arabic-400.css";
+import "@fontsource/vazirmatn/arabic-800.css";
+
+const title = "دیزاین | طراحی و توسعه وبسایت، اپلیکیشن و هویت بصری";
+const description =
+  "استودیو دیزاین. منتظر سایت جدید ما باشید. برای مشاوره طراحی و توسعه وبسایت و اپلیکیشن، برندینگ و هویت بصری، و دیدن نمونه‌کارها در واتساپ پیام بفرستید.";
+const canonical = "https://dizayn.ir/";
+const phone = "+989120295053";
+const whatsapp = "https://wa.me/989120295053";
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://dizayn.ir/#organization",
+      name: "دیزاین",
+      alternateName: ["Dizayn", "dizayn.ir"],
+      url: canonical,
+      logo: "https://dizayn.ir/logo.svg",
+      telephone: phone,
+      areaServed: "IR",
+      knowsLanguage: ["fa", "en"],
+      contactPoint: {
+        "@type": "ContactPoint",
+        telephone: phone,
+        contactType: "customer support",
+        availableLanguage: ["Persian", "fa"],
+        url: whatsapp,
+      },
+      sameAs: [whatsapp],
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://dizayn.ir/#website",
+      url: canonical,
+      name: "دیزاین",
+      inLanguage: "fa-IR",
+      publisher: { "@id": "https://dizayn.ir/#organization" },
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://dizayn.ir/#webpage",
+      url: canonical,
+      name: title,
+      description,
+      inLanguage: "fa-IR",
+      isPartOf: { "@id": "https://dizayn.ir/#website" },
+      about: { "@id": "https://dizayn.ir/#organization" },
+      primaryImageOfPage: "https://dizayn.ir/og.png",
+    },
+  ],
+};
+---
+
+<!doctype html>
+<html lang="fa-IR" dir="rtl">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+    <meta name="googlebot" content="index, follow" />
+    <meta name="theme-color" content="#ebebeb" />
+    <meta name="color-scheme" content="light" />
+    <meta name="format-detection" content="telephone=no" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="fa_IR" />
+    <meta property="og:site_name" content="دیزاین" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content="https://dizayn.ir/og.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="لوگوی دیزاین روی پس‌زمینه روشن" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content="https://dizayn.ir/og.png" />
+    <link rel="alternate" hreflang="fa-IR" href={canonical} />
+    <link rel="alternate" hreflang="x-default" href={canonical} />
+    <link rel="author" href="/llms.txt" />
+    <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+  </head>
+  <body>
+    <slot />
+  </body>
+</html>
+
+<style is:global>
+  @font-face {
+    font-family: "Vazirmatn Fallback";
+    src: local("Tahoma");
+    size-adjust: 108%;
+    ascent-override: 95%;
+    descent-override: 25%;
+    line-gap-override: 0%;
+  }
+
+  :root {
+    --bg: #ebebeb;
+    --ink: #0e0e0e;
+    --accent: #f04a3f;
+    --line: rgb(0 0 0 / 0.1);
+    --font: "Vazirmatn", "Vazirmatn Fallback", Tahoma, sans-serif;
+  }
+
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+
+  html,
+  body {
+    margin: 0;
+    min-height: 100%;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: var(--font);
+  }
+
+  body {
+    min-height: 100dvh;
+  }
+
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  a {
+    color: inherit;
+  }
+</style>
